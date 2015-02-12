@@ -336,6 +336,137 @@ Tried random forest using cross validation and selected the model with a
 
 \end_layout
 
+\begin_layout Standard
+Woo hoo.
+ 90%
+\end_layout
+
+\begin_layout Standard
+Got smart and started to use crossvalidation.
+ I tried multiple SVM impelentaitons (radial basis functions, stochastic
+ gradient descent on linear model, polynomial models), and found that tuning
+ C to a relaxed .0001 lead to the best performance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted15.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted16.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted14.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tried random forest classifier in CV:
+\end_layout
+
+\begin_layout Standard
+Best was around 88%.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted17.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tried AdaBoostClassiifer:
+\end_layout
+
+\begin_layout Standard
+Best I could get was around 89%:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted18.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+AdaBoostRegressor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted19.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tried the various linear_model classes.
+ Each that didn't error out are shown with their first-pass CV accuracy.
+ It looks like RidgeClassifier would be a good place to look:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted20.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Couldn't get Ridge any better.
+\end_layout
+
+\begin_layout Standard
+Tried neural nets;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted22.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted21.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Section*
 5 Conclusion
 \end_layout

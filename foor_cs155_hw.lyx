@@ -464,6 +464,100 @@ Tried neural nets;
 \end_layout
 
 \begin_layout Standard
+Used grid search to explore the various parameter spaces.
+ Looks like rbf gets possibly better than the current victor--the linear
+ C=.0001 model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted23.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+clearly, nope--and it matches the CV score:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted24.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+heh heh.
+\end_layout
+
+\begin_layout Standard
+I took the results from the test set and included them in my training set.
+ Becuase my regularizer is pretty loose, and because I scored better than
+ 1/2 on the test set, i was able to increase the score--i think.
+ I will try this recursivly until something theoretical breaks it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted25.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Second time I tried this, it broke:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted26.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Okay--using adaboost, I got a better result and still had training error,
+ so I'll try more classifiers:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted27.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+GradientBoostClassifier returned even better error at 93% and with a tuned
+ max depth of 3:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted28.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted29.png
+
+\end_inset
+
 
 \end_layout
 
