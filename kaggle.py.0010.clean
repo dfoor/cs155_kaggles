@@ -1,0 +1,71 @@
+    
+def get_error(G, Y):
+    error=0
+    for i in xrange(len(G)):
+        if G[i] != Y[i]:
+            error += 1
+    return 1.0 * error / len(G)
+
+
+def demo(train,test):
+
+    import sys
+    import csv
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from sklearn import svm
+    import pprint
+
+    with open(train, 'rb') as csvfile:
+        data=np.array(list(csv.reader(csvfile))).astype(int)
+    with open(test, 'rb') as csvfile:
+        data2=np.array(list(csv.reader(csvfile))).astype(int)
+    
+    num_dim= len(data[0])-2
+
+    x_train = data[::, 1:-1]
+    y_train = data[::, -1]
+    x_test = data2[::, 1:]
+    print y_train
+    print 'data read'
+    
+
+    #SVM implementaiton
+
+    test_errors =[]
+    train_errors =[]
+    #for C in [.0001, .001, .01, .1, 1]:
+    for C in [1]:
+        X1 = x_train
+        results_to_num = y_train
+
+
+        clf = svm.SVC(
+                kernel='poly',
+                C=C,
+                #degree=Q,
+                shrinking=False,
+                gamma=1,
+                coef0=1)
+
+        print 'fitting data'
+        clf.fit(X1, results_to_num)
+
+        print 'predicting results'
+        G_train = clf.predict(x_train)
+        G_test = clf.predict(x_test)
+
+        train_error = get_error(G_train, y_train)
+        print 'train_error ', train_error
+
+        train_errors.append(train_error)
+        test_error = get_error(G_test, Y_train)
+        print 
+        for i in xrange(len(x_test)):
+            print i, ',', G_test[i]
+
+
+    
+if __name__ == '__main__':
+    print('k3.csv')
+    demo('kaggle_train_wc.csv','kaggle_test_wc.csv')
